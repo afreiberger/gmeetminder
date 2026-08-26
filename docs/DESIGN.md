@@ -115,7 +115,7 @@ Match the calendar owner's email (from GOA account) against event `ATTENDEE` `PA
 ## Project structure
 
 ```
-gmeetminder@dfreiber.local/
+gmeetminder@afreiberger.github.io/
   metadata.json
   extension.js
   prefs.js
@@ -124,7 +124,7 @@ gmeetminder@dfreiber.local/
   stylesheet.css
 tests/
   runner + meetLink.test.js + scheduler.test.js + fixtures/
-docs/superpowers/specs/2026-08-26-gmeetminder-design.md
+docs/DESIGN.md
 Makefile   (build schemas, pack, install, test)
 ```
 

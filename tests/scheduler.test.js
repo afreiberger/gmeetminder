@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Unit tests for lib/scheduler.js.
  *
@@ -7,8 +10,8 @@
  */
 
 import { describe, it, expect } from './harness.js';
-import { Scheduler } from '../gmeetminder@dfreiber.local/lib/scheduler.js';
-import { makeEvent } from '../gmeetminder@dfreiber.local/lib/types.js';
+import { Scheduler } from '../gmeetminder@afreiberger.github.io/lib/scheduler.js';
+import { makeEvent } from '../gmeetminder@afreiberger.github.io/lib/types.js';
 
 /**
  * Manual fake clock + timers. `advance(ms)` moves `now` forward, firing any

@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Tiny zero-dependency test harness for GJS (`gjs -m`).
  *

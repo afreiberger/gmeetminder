@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Notification path: tell the user a meeting is starting (or already running)
  * and offer a one-click "Join" action.

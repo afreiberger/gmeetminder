@@ -1,4 +1,7 @@
 #!/usr/bin/env gjs
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * eds_probe.js — standalone smoke test for lib/calendarSource.js.
  *
@@ -29,7 +32,7 @@ import GLib from 'gi://GLib';
 const thisFile = GLib.filename_from_uri(import.meta.url)[0];
 const thisDir = GLib.path_get_dirname(thisFile);
 const sourceUri = GLib.filename_to_uri(
-    GLib.build_filenamev([thisDir, '..', 'gmeetminder@dfreiber.local', 'lib', 'calendarSource.js']), null);
+    GLib.build_filenamev([thisDir, '..', 'gmeetminder@afreiberger.github.io', 'lib', 'calendarSource.js']), null);
 
 function fmtTime(ms) {
     if (!ms)

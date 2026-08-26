@@ -1,4 +1,4 @@
-UUID = gmeetminder@dfreiber.local
+UUID = gmeetminder@afreiberger.github.io
 SRC = $(UUID)
 INSTALL_DIR = $(HOME)/.local/share/gnome-shell/extensions/$(UUID)
 
@@ -30,11 +30,10 @@ enable:
 disable:
 	gnome-extensions disable $(UUID)
 
-# Build a distributable zip via gnome-extensions.
+# Build a distributable zip via gnome-extensions. The schemas/ directory is
+# picked up automatically; lib/ must be listed as an extra source.
 pack: schemas
-	gnome-extensions pack --force $(SRC) \
-	  --extra-source=lib \
-	  --schema=$(SRC)/schemas/org.gnome.shell.extensions.gmeetminder.gschema.xml
+	gnome-extensions pack --force $(SRC) --extra-source=lib
 
 # Tail the shell journal filtered to our extension.
 logs:

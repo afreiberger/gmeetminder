@@ -1,11 +1,14 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Unit tests for lib/meetLink.js — PURE extraction/classification.
  * Run via the runner (`gjs -m tests/runner.js`) or in isolation.
  */
 
 import { describe, it, expect } from './harness.js';
-import { makeEvent, Service } from '../gmeetminder@dfreiber.local/lib/types.js';
-import { extract, enrich } from '../gmeetminder@dfreiber.local/lib/meetLink.js';
+import { makeEvent, Service } from '../gmeetminder@afreiberger.github.io/lib/types.js';
+import { extract, enrich } from '../gmeetminder@afreiberger.github.io/lib/meetLink.js';
 
 const DETECT = { detectServices: true };
 const NO_DETECT = { detectServices: false };

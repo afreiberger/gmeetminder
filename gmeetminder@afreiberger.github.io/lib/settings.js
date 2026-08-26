@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Typed, self-documenting wrapper over the extension's Gio.Settings.
  *

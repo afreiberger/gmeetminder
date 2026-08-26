@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-FileCopyrightText: 2026 Drew Freiberger -->
+<!-- SPDX-License-Identifier: GPL-2.0-or-later -->
 <schemalist gettext-domain="gmeetminder">
   <enum id="org.gnome.shell.extensions.gmeetminder.joinmode">
     <value nick="auto-open" value="0"/>

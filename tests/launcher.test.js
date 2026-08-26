@@ -1,10 +1,13 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Unit tests for lib/launcher.js — PURE functions only (buildArgv, parseProfiles).
  * open/listChromeProfiles/createInstantMeeting touch gio/disk and are not tested here.
  */
 
 import { describe, it, expect } from './harness.js';
-import { buildArgv, parseProfiles } from '../gmeetminder@dfreiber.local/lib/launcher.js';
+import { buildArgv, parseProfiles } from '../gmeetminder@afreiberger.github.io/lib/launcher.js';
 
 describe('buildArgv', () => {
     it('builds argv with a normal profile', () => {

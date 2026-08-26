@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Chrome launcher: build/run the command line that opens a URL in a chosen
  * profile, open instant Google Meet rooms, and enumerate Chrome profiles.

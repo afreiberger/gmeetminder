@@ -1,4 +1,7 @@
 #!/usr/bin/env -S gjs -m
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Test entrypoint. Add new *.test.js imports here.
  * Run: gjs -m tests/runner.js   (or `make test`)

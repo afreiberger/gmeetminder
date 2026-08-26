@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * Scheduler: drives the panel countdown tick and fires one-shot "trigger" events
  * for upcoming (and already-in-progress) meetings.

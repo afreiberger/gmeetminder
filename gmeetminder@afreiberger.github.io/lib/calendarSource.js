@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Drew Freiberger
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 /**
  * calendarSource.js — read the user's Google calendars from Evolution Data
  * Server (EDS), which GNOME populates via GNOME Online Accounts (GOA), and
