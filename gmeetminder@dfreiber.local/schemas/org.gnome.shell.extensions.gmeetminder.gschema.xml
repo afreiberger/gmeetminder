@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gmeetminder">
+  <enum id="org.gnome.shell.extensions.gmeetminder.joinmode">
+    <value nick="auto-open" value="0"/>
+    <value nick="notify" value="1"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.gmeetminder"
+          path="/org/gnome/shell/extensions/gmeetminder/">
+
+    <key name="join-mode" enum="org.gnome.shell.extensions.gmeetminder.joinmode">
+      <default>"auto-open"</default>
+      <summary>What to do when a meeting is about to start</summary>
+      <description>auto-open: silently launch Chrome. notify: show a notification with a Join button.</description>
+    </key>
+
+    <key name="lead-time-seconds" type="i">
+      <default>60</default>
+      <range min="0" max="3600"/>
+      <summary>Seconds before start to trigger auto-open/notify</summary>
+    </key>
+
+    <key name="enabled-calendars" type="as">
+      <default>[]</default>
+      <summary>EDS source UIDs to include; empty means all discovered calendars</summary>
+    </key>
+
+    <key name="chrome-command" type="s">
+      <default>"google-chrome"</default>
+      <summary>Chrome executable used to open meetings</summary>
+    </key>
+
+    <key name="chrome-profile" type="s">
+      <default>"Default"</default>
+      <summary>Chrome profile directory (e.g. "Default", "Profile 1")</summary>
+    </key>
+
+    <key name="filter-require-meet-link" type="b">
+      <default>true</default>
+      <summary>Only auto-open events that have a video meeting link</summary>
+    </key>
+
+    <key name="filter-skip-declined" type="b">
+      <default>true</default>
+      <summary>Do not auto-open events you have declined</summary>
+    </key>
+
+    <key name="filter-skip-all-day" type="b">
+      <default>true</default>
+      <summary>Do not auto-open all-day events</summary>
+    </key>
+
+    <key name="filter-require-accepted" type="b">
+      <default>false</default>
+      <summary>Only auto-open events you have explicitly accepted</summary>
+    </key>
+
+    <key name="detect-services" type="b">
+      <default>true</default>
+      <summary>Detect non-Meet links (Zoom, Teams, etc.) in addition to Google Meet</summary>
+    </key>
+
+    <key name="bookmarks" type="as">
+      <default>[]</default>
+      <summary>Saved meeting links as JSON strings: {"name":"...","url":"..."}</summary>
+    </key>
+
+    <key name="join-next-shortcut" type="as">
+      <default><![CDATA[['<Super><Shift>j']]]></default>
+      <summary>Global keyboard shortcut to join the next meeting</summary>
+    </key>
+
+    <key name="last-refresh" type="x">
+      <default>0</default>
+      <summary>Internal: unix ms of last successful calendar refresh</summary>
+    </key>
+  </schema>
+</schemalist>

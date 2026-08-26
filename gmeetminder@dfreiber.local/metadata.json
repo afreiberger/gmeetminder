@@ -1,0 +1,10 @@
+{
+  "uuid": "gmeetminder@dfreiber.local",
+  "name": "gmeetminder",
+  "description": "Shows your next Google Meet in the top bar with a countdown, lists today's events, and auto-opens Chrome to the meeting 1 minute before it starts. Reads calendars from GNOME Online Accounts via Evolution Data Server. Inspired by MeetingBar.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.gmeetminder",
+  "gettext-domain": "gmeetminder",
+  "url": "https://github.com/dfreiber/gmeetminder",
+  "version": 1
+}
