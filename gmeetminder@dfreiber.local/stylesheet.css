@@ -1,0 +1,86 @@
+/*
+ * gmeetminder styling.
+ *
+ * Theme-friendly: emphasis via font-weight and dimming via opacity, so the
+ * extension inherits the active shell theme's colors (light or dark) instead of
+ * hardcoding foreground/background values.
+ */
+
+/* ---- Panel button ---- */
+.gmeetminder-panel-box {
+    spacing: 5px;
+}
+
+.gmeetminder-panel-icon {
+    /* Slightly smaller than the label so the countdown text leads. */
+    icon-size: 16px;
+}
+
+.gmeetminder-panel-label {
+    /* Cap runaway titles; clutter_text ellipsizes past this. */
+    max-width: 22em;
+}
+
+/* ---- Dropdown: section headers & hints ---- */
+.gmeetminder-header {
+    font-size: 0.85em;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+.gmeetminder-hint {
+    opacity: 0.7;
+}
+
+/* ---- Agenda rows ---- */
+.gmeetminder-event {
+    spacing: 8px;
+}
+
+.gmeetminder-glyph {
+    /* Keep the service indicator subtle and out of the way. */
+    font-size: 0.9em;
+    opacity: 0.75;
+    min-width: 1.4em;
+}
+
+.gmeetminder-time {
+    font-feature-settings: "tnum";
+    opacity: 0.8;
+    min-width: 3.2em;
+}
+
+.gmeetminder-title {
+    /* Fills remaining width; ellipsized in code. */
+}
+
+/* In-progress meeting: emphasized (bold applied via markup as well). */
+.gmeetminder-current {
+    font-weight: bold;
+}
+
+.gmeetminder-current .gmeetminder-time {
+    opacity: 1;
+}
+
+/* Declined: dimmed (line-through applied via Pango markup in code). */
+.gmeetminder-declined {
+    opacity: 0.5;
+}
+
+/* All-day rows are informational, slightly dimmed. */
+.gmeetminder-allday {
+    opacity: 0.7;
+}
+
+/* No join URL: non-activatable, greyed out. */
+.gmeetminder-nojoin {
+    opacity: 0.55;
+}
+
+/* ---- Join-next shortcut hint ---- */
+.gmeetminder-accel {
+    font-size: 0.85em;
+    opacity: 0.6;
+    padding-left: 1.5em;
+}

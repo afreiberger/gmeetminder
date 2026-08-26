@@ -9,6 +9,7 @@ import { run } from './harness.js';
 // Test suites register themselves on import via describe().
 import './meetLink.test.js';
 import './scheduler.test.js';
+import './launcher.test.js';
 
 const ok = run();
 imports.system.exit(ok ? 0 : 1);
