@@ -389,6 +389,27 @@ export class CalendarSource {
         }
     }
 
+    /** Retry connecting any sources whose client is still null after init. Fire-and-forget. */
+    reconnectFailed() {
+        if (this._destroyed || !this._ECal) return;
+        for (const entry of this._entries.values()) {
+            if (entry.client || entry._reconnecting) continue;
+            entry._reconnecting = true;
+            this._connectClient(entry.source)
+                .then(client => {
+                    entry._reconnecting = false;
+                    if (this._destroyed || !client) return;
+                    entry.client = client;
+                    logMsg(`reconnected client uid=${entry.uid} backend=${entry.backendName || '?'}`);
+                    this._notifyChanged();
+                })
+                .catch(e => {
+                    entry._reconnecting = false;
+                    logMsg(`reconnect failed uid=${entry.uid}: ${e}`);
+                });
+        }
+    }
+
     /** Promise wrapper around ECal.Client.connect (async), with sync fallback. */
     _connectClient(source) {
         const ECal = this._ECal;
