@@ -13,6 +13,7 @@ import { run } from './harness.js';
 import './meetLink.test.js';
 import './scheduler.test.js';
 import './launcher.test.js';
+import './calendarSource.reconnect.test.js';
 
 const ok = run();
 imports.system.exit(ok ? 0 : 1);

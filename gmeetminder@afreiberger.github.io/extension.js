@@ -73,16 +73,18 @@ export default class GmeetminderExtension extends Extension {
         this._scheduler.start();
 
         // Calendar source (EDS). init() is async and must never throw.
-        this._source = new CalendarSource();
+        const source = new CalendarSource();
+        this._source = source;
         this._changedHandler = 0;
-        this._source.init()
+        source.init()
             .then(() => {
-                this._changedHandler = this._source.connectChanged(() => this._scheduleRefresh());
+                if (this._source !== source) return; // disabled while init was in flight
+                this._changedHandler = source.connectChanged(() => this._scheduleRefresh());
                 this._refresh();
             })
             .catch((e) => {
                 console.log('[gmeetminder] CalendarSource.init failed:', e?.message ?? e);
-                this._indicator.setNoAccount(true);
+                this._indicator?.setNoAccount(true);
             });
 
         // React to settings changes that affect filtering/UI/keybinding.
@@ -97,8 +99,10 @@ export default class GmeetminderExtension extends Extension {
 
         this._bindShortcut();
 
-        // Safety re-poll in case an EDS change signal is missed.
+        // Safety re-poll in case an EDS change signal is missed; also retry any
+        // sources that failed to connect at init time (e.g. early-startup timeout).
         this._repollTimer = GLib.timeout_add(GLib.PRIORITY_DEFAULT, SAFETY_REPOLL_MS, () => {
+            this._source?.reconnectFailed();
             this._refresh();
             return GLib.SOURCE_CONTINUE;
         });
